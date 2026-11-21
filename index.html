@@ -1,1 +1,35 @@
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon Assistant IA</title>
+<style>
+body{font-family:Arial;background:#10131c;color:white;margin:0;padding:20px}
+main{max-width:650px;margin:50px auto;background:#202638;padding:25px;border-radius:18px}
+h1{text-align:center}
+#chat{height:350px;overflow:auto;background:#151a27;padding:12px;border-radius:12px}
+input{width:75%;padding:13px;border:0;border-radius:8px}
+button{padding:13px;background:#547cff;color:white;border:0;border-radius:8px}
+</style>
+</head>
+<body>
+<main>
+<h1>🤖 Mon Assistant IA</h1>
+<p>Bienvenue ! Pose-moi une question.</p>
+<div id="chat"></div>
+<input id="message" placeholder="Écris ton message...">
+<button onclick="send()">Envoyer</button>
+</main>
+<script>
+function send(){
+let input=document.getElementById("message");
+let chat=document.getElementById("chat");
+if(!input.value.trim())return;
+chat.innerHTML+="<p><b>Toi :</b> "+input.value.replace(/[<>&"]/g,"")+"</p>";
+chat.innerHTML+="<p><b>IA :</b> Interface prête ! Il faut maintenant connecter un modèle d'intelligence artificielle.</p>";
+input.value="";
+}
+</script>
+</body>
+</html>
